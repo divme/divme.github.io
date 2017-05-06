@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML核心概念详解</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="web-box>		
+				<ul class="link-ul">
+					<li class="link-li"><a target="_blank" href="#1" class="link">一、DOCTYPE声明</a></li>
+					<li class="link-li"><a target="_blank" href="#2" class="link">二、Meta标签</a></li>
+					<li class="link-li"><a target="_blank" href="#3" class="link">三、元素类型</a></li>
+					<li class="link-li"><a target="_blank" href="#4" class="link">四、Table详解</a></li>
+					<li class="link-li"><a target="_blank" href="#5" class="link">五、form</a></li>
+				</ul>
+			</div>	
+			<div class="container">
+				<div class="box" id="1">
+					<h5 class="title">一、DOCTYPE声明 </h5>
+					<p class="answer">
+						（1）
+						&lt;!DOCTYPE>声明位于位于HTML文档中的第一行，处于
+						&lt;html> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。
+					</p>
+					<p class="answer">
+						（2）严格模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。
+						<p class="answer">
+							混杂模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。
+						</p>
+						<p class="answer">
+							DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。
+						</p>
+				</div>
+				<div class="box" id="2">
+					<h5 class="title">二、Meta标签</h5>
+					<p class="answer">&lt;meta> 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。</p>
+					<p class="answer">&lt;meta> 标签位于文档的头部，不包含任何内容。&lt;meta> 标签的属性定义了与文档相关联的名称/值对。</p>
+				</div>
+				<div class="box" id="3">
+					<h5 class="title">三、元素类型</h5>
+					<p class="answer">块级元素与行内元素；</p>
+					<p class="answer">替换元素（img,input）与非替换元素</p>
+					<p class="answer">1.Block元素如果没有指定任何长宽规则的话，缺省的是在水平方向上填充满父级容器 水平方向的空间，所以不需要制定说width为100%；</p>
+					<p class="answer"> 2.如果没有指定浮动或者position的话，Block元素默认起始于父级容器的最左边界，然后安排在前面还有的block元素下面;</p>
+					<p class="answer">3.inline元素会自动忽略width和height，写了也没用；然而行内元素的padding-left，margin-left和padding-right,margin-right有用，padding-top，margin-top和padding-bottom,margin-bottom是无效的;</p>
+					<p class="answer"> 4.inline元素同文字一起被布局和渲染，他的大小会随着一些字体方面的属性而发生变化，例如white-space、font-size、lettering-spacing等;</p>
+					<p class="answer"> 5.inline元素可以使用vertical-align来进行竖直方向的对齐，但是block元素不行;</p>
+					<p class="answer"> 6.如果指定inline元素为浮动的话，他就变成block型的了。</p>
+					<p class="answer">补充一点就是，这些特性是针对html元素的天生而言的，但是不妨碍后天给他指定，可以通过display: block;来指定a或者span成为block型元素，同时还有好多效果可以利用display: inline-block;这样的方式做到，等等。
+					</p>
+				</div>
+				<div class="box" id="4">
+					<h5 class="title">四、Table详解</h5>
+					<p class="answer">
+						1.两种边框模型</p>
+					<p class="answer"> border-collapse：collapse；合并边框模型</p>
+					<p class="answer"> border-collapse：separate；分割边框模型</p>
+					<p class="answer">2.cellspacing=0；确保单元格之间没有间隔，尽管有border-spacing属性，还是前者比较稳妥；</p>
+					<p class="answer">3.table-layout：fixed；固定宽度布局，限定table的宽度；</p>
+					<p class="answer">table-layout：auto；默认值，width:auto；宽度随内容而变，可以结合white-space使用；</p>
+					</p>
+				</div>
+				<div class="box" id="5">
+					<h5 class="title">五、form</h5>
+					<p class="answer"></p>
+				</div>
+				<div class="box" id="last">
+			 		<h5 class="title">前端成长图</h5>
+			 		<div class="img-box">
+			 			<img src="img/web1.png"/>
+			 			<img src="img/web2.png"/>
+			 			<img src="img/web3.png"/>
+			 			<img src="img/web4.png"/>
+			 		</div>
+			 	</div>
+			</div>
+		</div>
+	</body>
+
+	</html>
