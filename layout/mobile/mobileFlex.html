@@ -197,64 +197,7 @@
         <div class="pageInfo">这个用 flex 很自然，感觉还可以</div>
     </div>
 
-    <script>
-        window.addEventListener('touchstart',touchstart);
-        window.addEventListener('touchmove',touchmove);
-        window.addEventListener('touchend',touchend);
-        var startX1, startY1,
-            startX2, startY2;
-        var endX1, endY1,
-            endX2, endY2;
-        function touchstart(e){
-            e.preventDefault();
 
-            startX1 = e.touches[0].clientX;
-            startY1 = e.touches[0].clientY;
-
-            startX2 = e.touches[1].clientX;
-            startY2 = e.touches[1].clientY;
-
-            if(!document.body.style.fontSize){
-                var bfs;
-                    bfs = window.getComputedStyle(document.body, null)['font-size'] || document.body.currentStyle['font-size'];
-                    document.body.style.fontSize = bfs;
-            }
-
-        }
-        function touchmove(e){
-            e.preventDefault();
-
-            endX1 = e.touches[0].clientX;
-            endY1 = e.touches[0].clientY;
-
-            endX2 = e.touches[1].clientX;
-            endY2 = e.touches[1].clientY;
-        }
-        function touchend(e){
-            e.preventDefault();
-
-            if(startX1 > startX2){
-                if(startX1 > endX1 && startX2 < endX2 ){
-                    if(parseInt(document.body.style.fontSize) <= 12 ){ return }
-                    document.body.style.fontSize = (parseInt(document.body.style.fontSize) - 2)+'px';
-                }
-                if(startX1 < endX1 && startX2 > endX2 ){
-                    if(parseInt(document.body.style.fontSize) >= 20){ return }
-                    document.body.style.fontSize = (parseInt(document.body.style.fontSize) + 2)+'px';
-                }
-            }
-            if(startX1 < startX2){
-                if(startX1 > endX1 && startX2 < endX2 ){
-                    if(parseInt(document.body.style.fontSize) >= 20){ return }
-                    document.body.style.fontSize = (parseInt(document.body.style.fontSize) + 2)+'px';
-                }
-                if(startX1 < endX1 && startX2 > endX2 ){
-                    if(parseInt(document.body.style.fontSize) <= 12 ){ return }
-                    document.body.style.fontSize = (parseInt(document.body.style.fontSize) - 2)+'px';
-                }
-            }
-        }
-    </script>
 </body>
 </html>
 
