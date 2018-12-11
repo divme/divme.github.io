@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>my github.io</title>
-</head>
-<body>
+  ---
+　　layout: default
+　　title: 宗小鱼儿
+  ---
 
-<h1>Hello World</h1>
+　　<h2>{{ page.title }}</h2>
 
-</body>
-</html>
+　　<p>最新文章</p>
+
+　　<ul>
+
+    　　　　{% for post in site.posts %}
+
+    　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+
+    　　　　{% endfor %}
+
+　 </ul>
