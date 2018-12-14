@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<title>CSS Tips</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<a class="back-to-top" href="#">回到顶部</a>
+			<div class="box">
+				<ul class="link-ul">
+					<li class="link-li"><a  href="#d1" class="link">1.css背景定位实现tab切换</a></li>
+					<li class="link-li"><a  href="#d2" class="link">2.纯css实现简易轮播图</a></li>
+					<li class="link-li"><a  href="#d3" class="link">3.超出宽度部分省略号表示</a></li>
+					<li class="link-li"><a  href="#d4" class="link">4.创建三列等高Div</a></li>
+					<li class="link-li"><a  href="#d5" class="link">5.实现居中带格式标题</a></li>
+					<li class="link-li"><a  href="#d6" class="link">6.三列四边距布局和三列两边距布局</a></li>
+					<li class="link-li"><a  href="#d7" class="link">7.利用缩写属性或者定位，显示工具条</a></li>
+					<li class="link-li"><a  href="#d8" class="link">8.fixed定位元素占据全屏</a></li>
+					<li class="link-li"><a  href="#d9" class="link">9.单行居中，两行居左，超过两行省略</a></li>
+					<li class="link-li"><a  href="#d10" class="link">10.中英文文字两端对齐</a></li>
+			    </ul>
+			    <ul class="link-ul">
+					<li class="link-li"><a  href="#d11" class="link">11.简单背景渐变动画</a></li>
+					<li class="link-li"><a  href="#d12" class="link">12.纯css tab切换方案</a></li>
+					<li class="link-li"><a  href="#d13" class="link">13.纯css 暂停播放动画</a></li>
+					<li class="link-li"><a  href="#d14" class="link">14.border之巧用border宽度</a></li>
+					<li class="link-li"><a  href="#d15" class="link"></a></li>
+					<li class="link-li"><a  href="#d16" class="link"></a></li>
+					<li class="link-li"><a  href="#d17" class="link"></a></li>
+					<li class="link-li"><a  href="#d18" class="link"></a></li>
+					<li class="link-li"><a  href="#d19" class="link"></a></li>
+					<li class="link-li"><a  href="#d20" class="link"></a></li>
+			    </ul>
+			</div>
+			
+			<div class="container">
+				<div class="box" id="d1">
+					<h5 class="title">1.css背景定位实现tab切换</h5>
+					<p class="explain">css图片精灵也是基于这种方法原理。</p>
+					<span class="answer">
+			 			<div class="header-1">
+			 			   <img src="img/icon.png"/>
+						   <ul class="ul-container">
+							 <li class="lione"></li>
+							 <li class="litwo"></li>
+						   </ul>	
+		                </div>
+						<div class="div-container">
+							<div class="mao">
+								   <img src="img/lesson.png" />
+								   <span>这只是重复的图文</span>
+							</div>
+							<div class="mao">
+									<img src="img/lesson.png" />
+									<span>这只是重复的图文two</span>
+							</div>
+							<div class="mao">
+									<img src="img/lesson.png" />
+									<span>这只是重复的图文three</span>
+							</div>
+					    </div>
+					</span>
+					<script>
+					 	$(document).ready(function(){
+					 		$(".lione").click(function(){
+					 			$(".lione").css("background-position","0px -26px");
+					 			$(".litwo").css("background-position","-30px -26px");
+					 			$(".div-container").children().removeClass("mao").addClass("gou");
+					 		})
+					 		$(".litwo").click(function(){
+					 			$(".lione").css("background-position","0px 0px");
+					 			$(".litwo").css("background-position","-30px 0px");
+					 			$(".div-container").children().removeClass("gou").addClass("mao");
+					 		})
+					 	})
+					 </script>
+				</div>
+				<div class="box" id="d2">
+					<h5 class="title">2.纯css实现轮播图</h5>
+					<p class="explain">target伪元素实现轮播。</p>
+					<span class="answer">
+						<div class="container2">
+							<div class="yuan-box">
+								<a class="yuan" href="#img2-1"></a>
+							    <a class="yuan" href="#img2-2"></a>
+							    <a class="yuan" href="#img2-3"></a>
+							</div>
+							<ul class="img2-box">
+								<li class="img2" id="img2-1">
+									<img src="img/1.png"/>
+								</li>
+								<li class="img2" id="img2-2">
+									<img src="img/2.png"/>
+								</li>
+								<li class="img2" id="img2-3">
+									<img src="img/3.png"/>
+								</li>
+							</ul>
+						</div>
+					</span>
+				</div>
+				<div class="box" id="d3">
+					<h5 class="title">3.超出宽度部分省略号表示</h5>
+					<span class="answer">
+						<p class="p-3">我其实一共有一百多个字呢！可是没显示全</p>
+					</span>
+				</div>
+				<div class="box" id="d4">
+					<h5 class="title">4.创建三列等高DIV</h5>
+					<p class="explain">利用padding和margin创建等高列</p>
+					<span class="answer answer-4">
+						<div class="content-4">天下大势，分久必合，合久必分</div>
+						<div class="content-4">纵观全局，细分天下；数英雄人物，风流无尽，弯弓射雕，美人在侧，群臣俯首，天地之下，无人出其左右</div>
+						<div class="content-4">我是一个粉刷匠，粉刷本领强，我要把那新房子，刷的很漂亮</div>
+					</span>
+				</div>
+				<div class="box" id="d5">
+					<h5 class="title">5.实现居中带格式标题</h5>
+					<span class="answer">
+						<div class="title5-box">
+							<span class="title5">center title</span>
+						</div>
+						<div class="title5-box">
+							<span class="title5">随意多少字都可以的啦</span>
+						</div>
+					</span>
+				</div>
+				<div class="box" id="d6">
+					<h5 class="title">6.三列四边距布局和三列两边距布局</h5>
+					<p class="explain">第一个计算好了宽度；第二个用了margin负值。</p>
+					<span class="answer">
+						<ul class="ul6 ul6-1">
+							<li class="li6 li6-1"></li>
+							<li class="li6 li6-1"></li>
+							<li class="li6 li6-1"></li>
+						</ul>
+						<div class="ul6-box">
+						  <ul class="ul6 ul6-2">
+							<li class="li6 li6-2"></li>
+							<li class="li6 li6-2"></li>
+							<li class="li6 li6-2"></li>
+						  </ul>
+						</div>
+					</span>
+				</div>
+				<div class="box" id="d7">
+					<h5 class="title">7.利用缩写属性或者定位，显示工具条</h5>
+					<p class="explain">萝卜芹菜，各有所爱。投机取巧，方得始终。</p>
+					<span class="answer">
+						<div class="p-7">
+							<abbr title="蒋介石曾经是一个优秀的领袖">蒋介石</abbr>
+							（1887年10月31日－1975年4月5日），名中正，字介石。生于清朝末年浙江省宁波府奉化县（今浙江省宁波市奉化市）。国民党当政时期的党、政、军主要领导人。历任黄埔军校校长、国民革命军总司令、国民政府主席、行政院院长、国民政府军事委员会委员长、中国国民党总裁、三民主义青年团团长、第二次世界大战同盟国中国战区最高统帅、国民党政府总统等职务。1927年9月28日，蒋介石东渡求婚。1937年8月12日，蒋介石任海陆空军大元帅，1949年国民党和共产党内战失败后退守 
+							<span class="relative tool-title-7">台湾，<span class="absolute tool-7">台湾是中国领土不可分割的一部分
+							</span></span>
+							1975年逝世于台湾台北的住所士林官邸内。 
+						</div>
+					</span>
+				</div>
+				<div class="box" id="d8">
+					<h5 class="title">8.fixed定位元素占据全屏</h5>
+					<p class="explain">#d8 下的answer已经占据全屏了。</p>
+					<span class="answer"></span>
+				</div>
+				<div class="box" id="d9">
+					<h5 class="title">9.单行居中，两行居左，超过两行省略</h5>
+					<p class="explain">居中inline-block元素的方法，类似于5。</p>
+					<span class="answer">
+						<div class="lc">
+							<h5 class="lch5">
+							    <p class="lcp">单行居中标题</p>
+							</h5>
+							<h5 class="lch5">
+							    <p class="lcp">多行居左标题，重要的是显示css的灵活与强大，并不是一定要应用</p>
+							</h5>
+							<p class="lct">
+								多行内容只显示两行，兼容性不好，移动端还可以，webkit-box
+							</p>
+						</div>
+					</span>
+				</div>
+				<div class="box" id="d10">
+					<h5 class="title">10.多列均匀分布布局</h5>
+					<p class="explain">利用text-align：justify属性和inline-block元素,其实用flex可以很轻松的实现。</p>
+					<span class="answer">
+						<div class="justify">
+							<span class="columns"></span>
+							<span class="columns"></span>
+							<span class="columns"></span>
+							<span class="columns"></span>
+							<span class="columns"></span>
+						</div>
+						<div class="justify">
+							<span class="columns"></span>
+							<span class="columns"></span>
+							<span class="columns"></span>
+						</div>
+						<div class="justify">
+							<span class="columns"></span>
+							<span class="columns"></span>
+							<span class="columns"></span>
+							<span class="columns"></span>
+						</div>
+					</span>
+				</div>
+				<div class="box" id="d11">
+					<h5 class="title">11.简单背景渐变动画</h5>
+					<p class="explain">css3新特性背景渐变色。</p>
+					<span class="answer">
+						<!--<div class="gradient-container">-->
+							<div class="dgradient"></div>
+						<!--</div>-->
+						<!--<div class="gradient-container">-->
+						    <h3 class="gradient">i am h3</h3>
+						<!--</div>-->
+					</span>
+				</div>
+				<div class="box" id="d12">
+					<h5 class="title">12.纯css tab切换方案</h5>
+					<p class="explain">利用target伪类。</p>
+					<span class="answer">
+						<div class="tcontainer">
+							<div id="content1">列表1内容:123456</div>
+							<div id="content2">列表2内容:abcdef</div>
+							<ul class='nav'>
+								<li class="active"><a href="#content1">列表1</a></li>
+								<li><a href="#content2">列表2</a></li>
+							</ul>
+						</div>
+					</span>
+				</div>
+				<div class="box" id="d13">
+					<h5 class="title">13.纯css 暂停播放动画</h5>
+					<p class="explain">利用checked伪类,checkbox一个按钮可暂停播放，radio需要两个按钮。</p>
+					<span class="answer">
+						<input id="stop" type="radio" name="playAnimation" />
+						<input id="play" type="radio" name="playAnimation" />
+						<div class="labelbox">
+							<label for="stop">stop</label>
+							<label for="play">play</label>
+						</div>
+						<div class="animation"></div>
+					</span>
+				</div>
+
+			</div><!--container end-->
+		</div><!--wrapper end-->
+		
+	</body>
+
+</html>
